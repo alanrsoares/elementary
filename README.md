@@ -1,22 +1,19 @@
 React ES6 Starter Kit
 =====================
 
-## Usage
+## Prerequisites:
 
-### Clone It
+- node.js: `brew install node`
 
-```
-git clone git@github.com:alanrsoares/react-es6-starter.git
-```
+## Application Dependencies
 
-### Install dependencies
+All the dependencies required for the build system, testing and so on are managed with npm and defined in `package.json`.
+They can be installed with:
 
 ```
 npm install
 ```
 
-### Start development server
+## Running the Application
 
-```
-npm start
-```
+You can run `npm start` to fire up the application on `http://localhost:8080` or `http://localhost:8080/webpack-dev-server/` (with live reload).

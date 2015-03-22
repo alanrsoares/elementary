@@ -4,7 +4,7 @@ import Hello from './hello';
 export default class App extends React.Component {
   render(){
     return (
-      <div class="app-container">
+      <div className="app-container">
         <Hello name="Jucanildo" />
       </div>
     )

@@ -1,3 +1,3 @@
 import React from 'react';
-
-React.render(<App />, document.getElementById('#app'));
+import App from './components/app';
+React.render(<App />, document.getElementById('app'));

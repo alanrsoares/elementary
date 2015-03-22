@@ -1,21 +1,21 @@
 React ES6 Starter Kit
 =====================
 
-# Usage
+## Usage
 
-> Clone It
+### Clone It
 
 ```
-git clone git@github.com/alanrsoares/react-es6-starter-kit.git
+git clone git@github.com:alanrsoares/react-es6-starter.git
 ```
 
-> Install dependencies
+### Install dependencies
 
 ```
 npm install
 ```
 
-> Start development server
+### Start development server
 
 ```
 npm start

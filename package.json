@@ -4,6 +4,7 @@
   "description": "Starter kit for ReactJs (0.13.x) development using ES6",
   "main": "index.js",
   "scripts": {
+    "start": "./scripts/start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alanrsoares",

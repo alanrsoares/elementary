@@ -1,6 +1,6 @@
 {
   "name": "react-livescript-starter",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Starter kit for ReactJs (0.13.x) development using ES6",
   "main": "index.js",
   "scripts": {

@@ -1,4 +1,4 @@
-React [LiveScript] Starter Kit
+React LiveScript Starter Kit
 ============================
 
 ## Prerequisites:
@@ -19,4 +19,16 @@ npm install
 You can run `npm start` to fire up the application on `http://localhost:8080`
 or `http://localhost:8080/webpack-dev-server/` (with live reload).
 
-[LiveScript]:[http://livescript.net]
+## Example React component
+
+```LiveScript
+require React from 'react'
+require $ from '../util/element'
+
+module.exports = React.createClass do
+  render: ->
+    # without jsx
+    $ 'h1' {} "Hello, #{@props.name}!"
+    # with jsx
+    ``<h1>Hello, {this.props.name}!</h1>``
+```

@@ -11,5 +11,8 @@ module.exports = {
       { test: /\.svg$/, loader: 'url-loader' },
       { test: /\.ls$/, loader: 'babel-loader!livescript-loader' }
     ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.ls']
   }
 };

@@ -1,8 +1,6 @@
 React = require 'react'
-Hello = require './hello.ls'
+Hello = require './hello'
+$ = require '../util/element'
 
-App = React.createClass do
-  render: ->
-    ``<Hello name="Jucanildo" />``
-
-module.exports = App
+module.exports = React.createClass do
+  render: -> $ Hello, { name:'LiveScript' }

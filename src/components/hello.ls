@@ -1,10 +1,10 @@
 React = require 'react'
 $ = require '../util/element'
 
-module.exports = React.createClass do
+module.exports = class Hello extends React.Component
   prop-types:
     name: React.PropTypes.string
-    
+
   list-item: (n) ->
     $ 'li' { className:'item' },
       $ 'a' {href:"#/dummy/#n"} "dummy link #n"

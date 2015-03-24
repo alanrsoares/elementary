@@ -1,5 +1,5 @@
-React ES6 Starter Kit
-=====================
+React [LiveScript] Starter Kit
+============================
 
 ## Prerequisites:
 
@@ -18,3 +18,5 @@ npm install
 
 You can run `npm start` to fire up the application on `http://localhost:8080`
 or `http://localhost:8080/webpack-dev-server/` (with live reload).
+
+[LiveScript]:[http://livescript.net]

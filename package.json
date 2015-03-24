@@ -1,5 +1,5 @@
 {
-  "name": "react-es6-starter",
+  "name": "react-livescript-starter",
   "version": "0.0.1",
   "description": "Starter kit for ReactJs (0.13.x) development using ES6",
   "main": "index.js",
@@ -11,7 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^4.7.16",
-    "babel-loader": "^4.2.0",
+    "livescript-loader": "^0.1.3",
     "react": "^0.13.1",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.7.0"

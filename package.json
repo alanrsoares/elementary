@@ -1,5 +1,6 @@
 {
   "name": "react-livescript-starter",
+  "repository":"git@github.com:alanrsoares/react-livescript-starter.git"
   "version": "0.1.0",
   "description": "Starter kit for ReactJs (0.13.x) development using ES6",
   "main": "index.js",
@@ -7,7 +8,7 @@
     "start": "./scripts/start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Alanrsoares",
+  "author": "github.com/alanrsoares",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^4.7.16",

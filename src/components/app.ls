@@ -1,6 +1,8 @@
-React = require 'react'
-Hello = require './hello'
-$ = require '../util/element'
+require! {
+  react: {Component}
+  './hello'
+  '../util/elementary': $
+}
 
-module.exports = class App extends React.Component
-  render: -> $ Hello, { name:'LiveScript' }
+module.exports = class App extends Component
+  render: -> $ hello, { name:'LiveScript' }

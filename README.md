@@ -24,10 +24,12 @@ or `http://localhost:8080/webpack-dev-server/` (with live reload).
 > Without JSX
 
 ```LiveScript
-require React from 'react'
-require $ from '../util/element'
+require! {
+  react: {Component}
+  '../util/element': $
+}
 
-module.exports = React.createClass do
+module.exports = class Hello extends Component
   render: ->
     $ 'h1' {} "Hello, #{@props.name}!"
 ```
@@ -35,9 +37,9 @@ module.exports = React.createClass do
 > With JSX
 
 ```LiveScript
-require React from 'react'
+require! react: {Component}
 
-module.exports = React.createClass do
+module.exports = class Hello extends Component
   render: ->
     ``<h1>Hello, {this.props.name}!</h1>``
 ```

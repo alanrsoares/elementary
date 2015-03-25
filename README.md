@@ -10,8 +10,8 @@ React LiveScript Starter Kit
 All the dependencies required for the build system, testing and so on are managed with npm and defined in `package.json`.
 They can be installed with:
 
-```
-npm install
+```bash
+$ npm install
 ```
 
 ## Running the Application

@@ -1,4 +1,7 @@
-React = require 'react'
-App = require './components/app'
+require! {
+  react
+  './components/app' : app
+  './util/element' : $
+}
 
-React.render ``<App />``, document.getElementById 'app'
+react.render $(app), document.get-element-by-id 'app'

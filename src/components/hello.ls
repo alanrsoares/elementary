@@ -1,9 +1,11 @@
-React = require 'react'
-$ = require '../util/element'
+require! {
+  react: {Component, PropTypes}
+  '../util/element': $
+}
 
-module.exports = class Hello extends React.Component
+module.exports = class Hello extends Component
   prop-types:
-    name: React.PropTypes.string
+    name: PropTypes.string
 
   list-item: (n) ->
     $ 'li' { className:'item' },

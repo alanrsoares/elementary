@@ -12,7 +12,7 @@ module.exports = class Hello extends Component
       $.a {href:"#/dummy/#n"} "dummy link #n"
 
   render: ->
-    $.div { className: 'hello-container'},
+    $.div { className: 'hello-container' },
       $.h1 {} "Hello, #{@props.name}!"
       $.ul {},
         [ 1 to 15 ] .map @list-item

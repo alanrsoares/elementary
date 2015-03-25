@@ -114,4 +114,4 @@ module.exports = <[
   var
   video
   wbr
-]> ++ [1 to 6].map -> "h#it"
+]> ++ [ 1 to 6 ].map -> "h#it"

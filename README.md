@@ -43,3 +43,8 @@ module.exports = class Hello extends Component
   render: ->
     ``<h1>Hello, {this.props.name}!</h1>``
 ```
+
+## TODO:
+
+- Add Tests
+- Add Basic Flux Architecture

@@ -1,6 +1,6 @@
 require! {
   react: {Component, PropTypes}
-  '../util/element': $
+  '../util/elementary' : $
 }
 
 module.exports = class Hello extends Component
@@ -8,11 +8,11 @@ module.exports = class Hello extends Component
     name: PropTypes.string
 
   list-item: (n) ->
-    $ 'li' { className:'item' },
-      $ 'a' {href:"#/dummy/#n"} "dummy link #n"
+    $.li { className:'item' },
+      $.a {href:"#/dummy/#n"} "dummy link #n"
 
   render: ->
-    $ 'div' { className: 'hello-container'},
-      $ 'h1' {} "Hello, #{@props.name}!"
-      $ 'ul' {},
+    $.div { className: 'hello-container'},
+      $.h1 {} "Hello, #{@props.name}!"
+      $.ul {},
         [ 1 to 15 ] .map @list-item

@@ -1,6 +1,7 @@
 module.exports = {
   context: __dirname + '/../src',
   entry: './app.ls',
+  devtool: "#inline-source-map",
   output: {
     path: __dirname + '/../build',
     filename: 'bundle.js'

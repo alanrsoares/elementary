@@ -10,8 +10,8 @@ React LiveScript Starter Kit
 All the dependencies required for the build system, testing and so on are managed with npm and defined in `package.json`.
 They can be installed with:
 
-```
-npm install
+```bash
+$ npm install
 ```
 
 ## Running the Application
@@ -43,3 +43,8 @@ module.exports = class Hello extends Component
   render: ->
     ``<h1>Hello, {this.props.name}!</h1>``
 ```
+
+## TODO:
+
+- Add Tests
+- Add Basic Flux Architecture

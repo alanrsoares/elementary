@@ -21,17 +21,17 @@ or `http://localhost:8080/webpack-dev-server/` (with live reload).
 
 ## Example React component
 
-> Without JSX
+> Without JSX - elementary lib
 
 ```LiveScript
 require! {
   react: {Component}
-  '../util/element': $
+  '../util/elementary': $
 }
 
 module.exports = class Hello extends Component
   render: ->
-    $ 'h1' {} "Hello, #{@props.name}!"
+    $.h1 {} "Hello, #{@props.name}!"
 ```
 
 > With JSX

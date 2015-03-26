@@ -46,5 +46,6 @@ module.exports = class Hello extends Component
 
 ## TODO:
 
-- Add Tests
-- Add Basic Flux Architecture
+- Configure Jest
+- Add unit tests
+- Achieve 100% code coverage

@@ -8,7 +8,7 @@ module.exports = class Header extends Component
   render: ->
     $.header {id:'header'},
       $.h1 {} 'todos'
-      $(todo-text-input {
+      $(todo-text-input, {
         id: 'new-todo'
         placeholder: 'What needs to be done?'
         onSave: @_onSave

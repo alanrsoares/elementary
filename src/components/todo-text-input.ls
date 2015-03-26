@@ -1,13 +1,14 @@
 require! {
-  react: {Component, PropTypes}
+  react
   '../util/elementary' : $
 }
 
 ENTER_KEY_CODE = 13
 
-module.exports = class TodoTextInput extends Component
+module.exports = react.createClass do
 
-
+  get-initial-state: ->
+    value: @props.value or ''
 
   render: ->
     $.input {

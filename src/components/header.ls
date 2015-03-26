@@ -1,18 +1,18 @@
 require! {
   react: {Component, PropTypes:types}
   '../util/elementary' : $
+  '../actions/todo-actions'
   './todo-text-input'
 }
 
 module.exports = class Header extends Component
   render: ->
-    $.header {id:'header'},
-      $.h1 {} 'todos'
-      $(todo-text-input, {
+    $.header id:'header',
+      $.h1 {} 'Eλementary Todo'
+      $(todo-text-input, do
         id: 'new-todo'
         placeholder: 'What needs to be done?'
-        onSave: @_onSave
-      })
+        on-save: @_onSave)
 
-  _onSave: (text) ->
-    console.log 'Saving: ' + text
+  _on-save: (text) ->
+    todo-actions.create text

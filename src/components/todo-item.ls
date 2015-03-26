@@ -2,6 +2,7 @@ require! {
   react
   'react/lib/cx'
   '../util/elementary' : $
+  '../actions/todo-actions'
   './todo-text-input'
 }
 
@@ -17,34 +18,36 @@ module.exports = react.createClass do
   render: ->
     todo = @props.todo
 
-    input = $(todo-text-input, {
-              class-name: 'edit'
-              onSave: @_onSave
-              value: todo.text
-            }) if @state.is-editing
+    input = ''
 
-    $.li key: todo.id
-         class-name: cx {completed: todo.complete editing: @state.is-editing},
+    if @state.is-editing then
+      input = $(todo-text-input,
+                class-name: 'edit'
+                onSave: @_onSave
+                value: todo.text)
+
+    $.li do
+      key: todo.id
+      class-name: cx({completed: todo.complete, editing: @state.is-editing}),
       $.div class-name:'view',
-        $.input {
+        $.input do
           class-name: 'toggle'
           type: 'checkbox'
           checked: todo.complete
           on-change: @_on-toggle-complete
-        }
         $.label on-double-click: @_on-double-click,
           todo.text
         $.button class-name: 'destroy' on-click: @_on-destroy-click
       input
 
-    _on-toggle-complete: ->
-      TodoActions.toggle-complete @props.todo
+  _on-toggle-complete: ->
+    todo-actions.toggle-complete @props.todo
 
-    _on-double-click: ->
-      @set-state is-editing: true
+  _on-double-click: ->
+    @set-state is-editing: true
 
-    _on-save: ->
-      TodoActions.update-text @props.todo.id, text
+  _on-save: ->
+    todo-actions.update-text @props.todo.id, text
 
-    _on-_on-destroy-click: ->
-      TodoActions.destroy @props.todo.id
+  _on-destroy-click: ->
+    todo-actions.destroy @props.todo.id

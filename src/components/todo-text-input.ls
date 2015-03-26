@@ -12,12 +12,12 @@ module.exports = react.createClass do
 
   render: ->
     $.input {
-      className: @props.className
+      class-name: @props.class-name
       id: @props.id
       placeholder: @props.placeholder
-      onBlur: @_onBlur
-      onChange: @_onChange
-      onKeyDown: @_onKeyDown
+      on-blur: @_on-blur
+      on-change: @_on-change
+      on-key-down: @_on-key-down
       value: @state.value
       autoFocus: true
     }
@@ -27,17 +27,17 @@ module.exports = react.createClass do
    * used in different ways.
    */
   _save: ->
-    @props.onSave @state.value
+    @props.on-save @state.value
     @setState value: ''
 
   /**
    * @param {object} event
    */
-  _onChange: (event) ->
+  _on-change: (event) ->
     @setState value: event.target.value
 
   /**
    * @param  {object} event
    */
-  _onKeyDown: (event) ->
+  _on-key-down: (event) ->
     @_save! if (event.keyCode is ENTER_KEY_CODE)

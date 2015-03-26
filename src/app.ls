@@ -1,7 +1,7 @@
 require! {
   react
-  './components/todo'
+  './components/todo-app'
   './util/elementary' : $
 }
 
-react.render $(todo), document.get-element-by-id 'app'
+react.render $(todo-app), document.get-element-by-id 'app'

@@ -41,7 +41,7 @@ module.exports = react.createClass do
       input
 
   _on-toggle-complete: ->
-    todo-actions.toggle-complete @props.todo
+    todo-actions.toggle-complete @props.todo.id
 
   _on-double-click: ->
     @set-state is-editing: true

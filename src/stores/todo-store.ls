@@ -51,7 +51,7 @@ class todo-store
     @update(id, { complete })
 
   on-toggle-complete-all: ->
-    complete = !todo-store.are-all-complete!
+    complete = !@@are-all-complete {@todos}
     @update-all { complete }
 
   on-destroy: (id) ->
@@ -61,8 +61,9 @@ class todo-store
     for id in @todos
       @on-destroy id if @todos[id].complete
 
-  @are-all-complete = ->
-    { todos } = @get-state!
+  @are-all-complete = (state) ->
+    { todos } = state or @get-state!
+    console.log todos
     for id in todos
       return false if !todos[id].complete
     return true

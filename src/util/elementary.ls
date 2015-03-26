@@ -1,6 +1,6 @@
 require! {
   react
-  './html-elements'
+  './html-tags'
 }
 
 slice = (args, index) -> [].slice.call args, index or 0
@@ -16,6 +16,6 @@ reducer = (reduced, tag) ->
     builder.apply this, [tag] ++ args
   reduced
 
-elementary = html-elements .reduce reducer, builder
+elementary = html-tags .reduce reducer, builder
 
 module.exports = elementary

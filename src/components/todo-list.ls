@@ -3,9 +3,9 @@ require! {
   '../util/elementary' : $
 }
 
-module.exports = class Hello extends Component
+module.exports = class TodoList extends Component
   prop-types:
-    name: PropTypes.string
+    items: PropTypes.array.required
 
   list-item: (n) ->
     $.li { className:'item' },
@@ -13,6 +13,6 @@ module.exports = class Hello extends Component
 
   render: ->
     $.div { className: 'hello-container' },
-      $.h1 {} "Hello, #@props.name!"
+      $.h1 {} "Hello, #{@props.name}!"
       $.ul {},
         [ 1 to 15 ] .map @list-item

@@ -1,6 +1,14 @@
 React LiveScript Starter Kit
 ============================
 
+## Features
+- LiveScript
+- ReactJs
+- WebPack bundler
+- Webpack Dev Server
+- Eλementary JSX-Free Templating Engine
+- Alt Flux
+
 ## Prerequisites:
 
 - node.js: `brew install node`

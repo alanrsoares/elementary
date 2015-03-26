@@ -44,7 +44,7 @@ class todo-store
     { id, text } = x
     text = text ? text.trim() : ''
     return false if text is ''
-    @update(id, {text})
+    @update(id, { text })
 
   on-toggle-complete: (id) ->
     complete = !@todos[id].complete

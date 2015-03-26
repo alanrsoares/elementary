@@ -4,4 +4,4 @@ require! {
   './util/elementary' : $
 }
 
-react.render $(todo-app), document.get-element-by-id 'app'
+react.render $(todo-app), document.get-element-by-id 'todoapp'

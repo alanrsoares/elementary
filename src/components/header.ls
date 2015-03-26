@@ -8,7 +8,7 @@ require! {
 module.exports = class Header extends Component
   render: ->
     $.header id:'header',
-      $.h1 {} 'Eλementary Todo'
+      $.h1 {} 'Eλementary'
       $(todo-text-input, do
         id: 'new-todo'
         placeholder: 'What needs to be done?'

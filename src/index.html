@@ -1,11 +1,23 @@
-<html>
-  <head>
-    <title>React LiveScript Starter Kit</title>
-    <link rel="stylesheet" href="./todomvc-common/base.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- Loads on body bottom to improve page loading speed -->
-    <script src="bundle.js"></script>
-  </body>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Alt - TodoMVC</title>
+		<link rel="stylesheet" href="todomvc-common/base.css">
+		<style>
+      #todo-list li .edit {
+        display: inline;
+      }
+    </style>
+	</head>
+	<body>
+		<section id="todoapp"></section>
+		<footer id="info">
+			<p>Double-click to edit a todo</p>
+			<p>Elementary LiveScript example created by <a href="http://github.com/alanrsoares">Alan Soares</a></p>
+      <p>View components created by <a href="http://facebook.com/bill.fisher.771">Bill Fisher</a></p>
+			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+		</footer>
+		<script src="bundle.js"></script>
+	</body>
 </html>

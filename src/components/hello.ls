@@ -13,6 +13,6 @@ module.exports = class Hello extends Component
 
   render: ->
     $.div { className: 'hello-container' },
-      $.h1 {} "Hello, #{@props.name}!"
+      $.h1 {} "Hello, #@props.name!"
       $.ul {},
         [ 1 to 15 ] .map @list-item

@@ -9,6 +9,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.scss$/, loader: 'style!css!sass' },
+      { test: /\.css$/, loader: 'style!css!' },
       { test: /\.svg$/, loader: 'url-loader' },
       { test: /\.ls$/, loader: 'babel-loader!livescript-loader' }
     ]

@@ -1,6 +1,7 @@
 require! {
   react: {Component, PropTypes:types}
   '../util/elementary' : $
+  './header'
 }
 
 module.exports = class Todo extends Component
@@ -17,17 +18,7 @@ module.exports = class Todo extends Component
   render: ->
     $.div { className: 'todo-container' },
       # header
-      $.div { className: 'todo-header' },
-        $.h1 {} 'What needs to be done?'
-      # body
-      $.div {className: 'todo-body'},
-        $.div {},
-          $.input {
-            type:'text'
-            placeholder:'What needs to be done?'
-            onKeyUp: -> console.log @
-          }
-        $.span {} 'foo'
+      $(header)
       # footer
       $.div {className: 'todo-footer'},
         "I'm in the footer, bitch!"

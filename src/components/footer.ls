@@ -20,16 +20,16 @@ module.exports = react.createClass do
     return null if total is 0
 
     completed = Object.keys(all-todos)
-                |> (.map (key) -> all-todos[key])
-                |> (.filter (todo) -> todo.complete)
-                |> (.length)
+                |> ( .map (key) -> all-todos[key] )
+                |> ( .filter (todo) -> todo.complete )
+                |> ( .length )
 
     items-left = total - completed
 
     items-left-plural = match items-left
                           | (> 1) => 'items'
                           | _     => 'item'
-    items-left-phrase = "#items-left-plural left"
+    items-left-phrase = "#items-left #items-left-plural left"
 
     clear-completed-button =
       $.button({
@@ -39,7 +39,7 @@ module.exports = react.createClass do
 
     $.footer id: 'footer',
       $.span id: 'todo-count',
-        $.strong {} items-left
+        $.strong {} items-left-phrase
       clear-completed-button
 
   _on-clear-completed-click: ->

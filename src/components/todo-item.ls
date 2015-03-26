@@ -47,7 +47,8 @@ module.exports = react.createClass do
     @set-state is-editing: true
 
   _on-save: (text) ->
-    todo-actions.update-text { id: @props.todo.id, text: text }
+    todo-actions.update-text { id: @props.todo.id, text }
+    @set-state is-editing: false
 
   _on-destroy-click: ->
     todo-actions.destroy @props.todo.id

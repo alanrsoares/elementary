@@ -28,7 +28,7 @@ class todo-store
   update-all: (updates) ->
     self = @
     Object.keys self.todos
-      |> (.map (id) -> self.update(id, updates))
+      |> ( .map (id) -> self.update(id, updates) )
 
   on-create: (text) ->
     text = text.trim()
@@ -59,8 +59,10 @@ class todo-store
     delete @todos[id]
 
   on-destroy-completed: ->
-    for id in @todos
-      @on-destroy id if @todos[id].complete
+    self = @
+    Object.keys self.todos
+      |> ( .filter (id) -> self.todos[id].complete )
+      |> ( .map (id) -> self.on-destroy id )
 
   @are-all-complete = (state) ->
     { todos } = state or @get-state!

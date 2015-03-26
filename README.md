@@ -1,6 +1,14 @@
 React LiveScript Starter Kit
 ============================
 
+## Features
+- LiveScript
+- ReactJs
+- WebPack bundler
+- Webpack Dev Server
+- Eλementary JSX-Free Templating Engine
+- Alt Flux
+
 ## Prerequisites:
 
 - node.js: `brew install node`
@@ -46,5 +54,6 @@ module.exports = class Hello extends Component
 
 ## TODO:
 
-- Add Tests
-- Add Basic Flux Architecture
+- Configure Jest
+- Add unit tests
+- Achieve 100% code coverage

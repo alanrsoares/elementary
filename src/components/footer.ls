@@ -33,12 +33,12 @@ module.exports = react.createClass do
 
     clear-completed-button =
       $.button({
-        id: 'clear-completed'
+        class-name: 'clear-completed'
         on-click: @_on-clear-completed-click
       }, 'Clear completed') if completed
 
-    $.footer id: 'footer',
-      $.span id: 'todo-count',
+    $.footer class-name: 'footer',
+      $.span class-name: 'todo-count',
         $.strong {} items-left-phrase
       clear-completed-button
 

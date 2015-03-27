@@ -1,12 +1,14 @@
 React LiveScript Starter Kit
 ============================
 
+> LiveScript is a language which compiles to JavaScript. It has a straightforward mapping to JavaScript and allows you to write expressive code devoid of repetitive boilerplate. While LiveScript adds many features to assist in functional style programming, it also has many improvements for object oriented and imperative programming.
+
 ## Features
 - LiveScript
 - ReactJs
-- WebPack bundler
-- Webpack Dev Server
-- Eλementary JSX-Free Templating Engine
+- Eλementary - A minimal templating engine for React - NO JSX REQUIRED
+- WebPack Module Bundler
+- Webpack Development Server (with livereload)
 - Alt Flux
 
 ## Prerequisites:

@@ -11,7 +11,7 @@ module.exports = {
       { test: /\.scss$/, loader: 'style!css!sass' },
       { test: /\.css$/, loader: 'style!css!' },
       { test: /\.svg$/, loader: 'url-loader' },
-      { test: /\.ls$/, loader: 'babel-loader!livescript-loader' }
+      { test: /\.ls$/, loader: 'livescript-loader' }
     ]
   },
   resolve: {

@@ -7,10 +7,10 @@ require! {
 
 module.exports = class Header extends Component
   render: ->
-    $.header id:'header',
-      $.h1 {} 'Eλementary Todo'
+    $.header class-name:'header',
+      $.h1 {} 'Eλementary'
       $(todo-text-input, do
-        id: 'new-todo'
+        class-name: 'new-todo'
         placeholder: 'What needs to be done?'
         on-save: @_onSave)
 

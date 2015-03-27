@@ -23,15 +23,15 @@ module.exports = react.createClass do
                 key: key
                 todo: all-todos[key])
 
-    $.section id: 'main',
+    $.section class-name: 'main',
       $.input do
-        id: 'toggle-all'
+        class-name: 'toggle-all'
         type: 'checkbox'
         on-change: @_on-toggle-complete-all
         checked: 'checked' if @props.are-all-complete
       $.label html-for: 'toggle-all',
         'Mark all as complete'
-      $.ul id: 'todo-list',
+      $.ul class-name: 'todo-list',
         todos
 
   _on-toggle-complete-all: ->

@@ -24,7 +24,7 @@ module.exports = react.create-class do
 
   render: ->
     $.div {},
-      $(header)
+      $(header, {title: 'Eλementary'})
       $(main-section, {
         all-todos: @state.all-todos
         are-all-complete: @state.are-all-complete

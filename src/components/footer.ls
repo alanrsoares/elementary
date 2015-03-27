@@ -4,6 +4,10 @@ require! {
   '../actions/todo-actions'
 }
 
+map    = (fn, xs) --> xs.map fn
+filter = (fn, xs) --> xs.filter fn
+length = (xs)     --> xs.length
+
 types = react.PropTypes
 
 module.exports = react.createClass do
@@ -20,9 +24,9 @@ module.exports = react.createClass do
     return null if total is 0
 
     completed = Object.keys(all-todos)
-                |> ( .map (key) -> all-todos[key] )
-                |> ( .filter (todo) -> todo.complete )
-                |> ( .length )
+                |> map (key) -> all-todos[key]
+                |> filter (todo) -> todo.complete
+                |> length
 
     items-left = total - completed
 

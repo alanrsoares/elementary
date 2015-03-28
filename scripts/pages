@@ -1,0 +1,7 @@
+./scripts/dist
+rm -f index.html
+rm -f bundle.js
+rm -f style.css
+cp ./dist/index.html index.html
+cp ./dist/bundle.js bundle.js
+cp ./dist/style.css style.css

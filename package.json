@@ -1,7 +1,7 @@
 {
   "name": "react-livescript-starter",
   "repository": "git@github.com:alanrsoares/react-livescript-starter.git",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Starter kit for ReactJs (0.13.x) development using LiveScript",
   "main": "index.js",
   "scripts": {

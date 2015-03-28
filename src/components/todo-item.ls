@@ -8,7 +8,7 @@ require! {
 
 types = react.PropTypes
 
-module.exports = react.createClass do
+module.exports = react.create-class do
   prop-types:
     todo: types.object.is-required
 
@@ -18,13 +18,10 @@ module.exports = react.createClass do
   render: ->
     todo = @props.todo
 
-    input = ''
-
-    if @state.is-editing then
-      input = $(todo-text-input,
-                class-name: 'edit'
-                onSave: @_onSave
-                value: todo.text)
+    input = $(todo-text-input do
+              class-name: 'edit'
+              onSave: @_onSave
+              value: todo.text) if @state.is-editing
 
     $.li do
       key: todo.id

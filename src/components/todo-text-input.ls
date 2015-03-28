@@ -5,13 +5,13 @@ require! {
 
 ENTER_KEY_CODE = 13
 
-module.exports = react.createClass do
+module.exports = react.create-class do
 
   get-initial-state: ->
     value: @props.value or ''
 
   render: ->
-    $.input {
+    $.input do
       class-name: @props.class-name
       id: @props.id
       placeholder: @props.placeholder
@@ -19,8 +19,7 @@ module.exports = react.createClass do
       on-change: @_on-change
       on-key-down: @_on-key-down
       value: @state.value
-      autoFocus: true
-    }
+      auto-focus: true
 
   /**
    * Invokes the callback passed in as onSave, allowing this component to be
@@ -28,13 +27,13 @@ module.exports = react.createClass do
    */
   _save: ->
     @props.on-save @state.value
-    @setState value: ''
+    @set-state value: ''
 
   /**
    * @param {object} event
    */
   _on-change: (event) ->
-    @setState value: event.target.value
+    @set-state value: event.target.value
 
   /**
    * @param  {object} event

@@ -6,7 +6,7 @@ require! {
 
 class todo-store
   ->
-    @bindActions(todo-actions)
+    @bindActions todo-actions
     @todos =
       'id1':
         id: 'id1'
@@ -61,15 +61,15 @@ class todo-store
   on-destroy-completed: ->
     self = @
     Object.keys self.todos
-      |> ( .filter (id) -> self.todos[id].complete )
-      |> ( .map (id) -> self.on-destroy id )
+      .filter (id) -> self.todos[id].complete
+      .map (id) -> self.on-destroy id
 
   @are-all-complete = (state) ->
     { todos } = state or @get-state!
 
     Object.keys todos
-      |> ( .map (key) -> todos[key] )
-      |> ( .filter (todo) -> not todo.complete )
-      |> ( .length is 0 )
+      .map (key) -> todos[key]
+      .filter (todo) -> not todo.complete
+      .length is 0
 
 module.exports = alt.create-store todo-store

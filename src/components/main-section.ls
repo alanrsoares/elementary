@@ -7,7 +7,7 @@ require! {
 
 types = react.PropTypes
 
-module.exports = react.createClass do
+module.exports = react.create-class do
   prop-types:
     all-todos: types.object.is-required
     are-all-complete: types.bool.is-required

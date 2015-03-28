@@ -20,15 +20,14 @@ module.exports = react.createClass do
     return null if total is 0
 
     completed = Object.keys(all-todos)
-                |> ( .map (key) -> all-todos[key] )
-                |> ( .filter (todo) -> todo.complete )
-                |> ( .length )
+                  .map (key) -> all-todos[key]
+                  .filter (todo) -> todo.complete
+                  .length
 
     items-left = total - completed
 
-    items-left-plural = match items-left
-                          | (> 1) => 'items'
-                          | _     => 'item'
+    items-left-plural = if items-left > 1 then 'items' else 'item'
+
     items-left-phrase = "#items-left #items-left-plural left"
 
     clear-completed-button =

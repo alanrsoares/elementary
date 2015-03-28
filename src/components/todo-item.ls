@@ -18,14 +18,14 @@ module.exports = react.create-class do
   render: ->
     todo = @props.todo
 
-    input = $(todo-text-input do
+    input = $(todo-text-input,
               class-name: 'edit'
               onSave: @_onSave
               value: todo.text) if @state.is-editing
 
     $.li do
       key: todo.id
-      class-name: cx({completed: todo.complete, editing: @state.is-editing}),
+      class-name: cx(completed: todo.complete, editing: @state.is-editing),
       $.div class-name:'view',
         $.input do
           class-name: 'toggle'

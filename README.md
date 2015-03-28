@@ -48,6 +48,16 @@ module.exports = class Hello extends Component
 
 > With JSX
 
+Install babel-loader
+```bash
+$ npm i babel-loader --save-dev
+```
+
+Add babel-loader to the 'ls' loader pipeline in [config/webpack.config.js](../master/config/webpack.config.js#L17)
+```javascript
+{ test: /\.ls$/, loader: 'babel-loader!livescript-loader' }
+```
+
 ```LiveScript
 require! react: {Component}
 

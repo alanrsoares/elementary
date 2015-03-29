@@ -10,16 +10,14 @@ module.exports = react.createClass do
   prop-types:
     all-todos: types.object.is-required
 
-  /**
-   * @return {object}
-   */
   render: ->
     all-todos = @props.all-todos
+
     total = Object.keys(all-todos).length
 
     return null if total is 0
 
-    completed = Object.keys(all-todos)
+    completed = Object.keys all-todos
                   .map (key) -> all-todos[key]
                   .filter (todo) -> todo.complete
                   .length

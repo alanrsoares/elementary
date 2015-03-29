@@ -5,7 +5,7 @@ require! {
   './header'
   './main-section'
   '../stores/todo-store'
-  'alt/mixins/FluxyMixin': fluxy
+  'alt/mixins/FluxyMixin'
 }
 
 get-todo-state = ->
@@ -13,23 +13,22 @@ get-todo-state = ->
   are-all-complete: todo-store.are-all-complete!
 
 module.exports = react.create-class do
-  mixins: [fluxy]
+  mixins: [FluxyMixin]
 
   statics:
     store-listeners:
-      _on-change: todo-store
+      on-change: todo-store
 
   get-initial-state: ->
     get-todo-state!
 
   render: ->
     $.div {},
-      $(header, {title: 'Eλementary'})
-      $(main-section, {
+      $(header, title: 'Eλementary')
+      $(main-section,
         all-todos: @state.all-todos
-        are-all-complete: @state.are-all-complete
-      })
+        are-all-complete: @state.are-all-complete)
       $(footer, all-todos: @state.all-todos)
 
-  _on-change: ->
+  on-change: ->
     @set-state get-todo-state

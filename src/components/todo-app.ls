@@ -23,11 +23,11 @@ module.exports = react.create-class do
     get-todo-state!
 
   render: ->
-    $.div {},
+    $.section class-name: 'todoapp',
       $(header, title: 'Eλementary')
       $(main-section,
         all-todos: @state.all-todos
-        are-all-complete: @state.are-all-complete),
+        are-all-complete: @state.are-all-complete)
       $(footer,
         all-todos: @state.all-todos)
 

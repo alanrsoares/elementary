@@ -3,17 +3,34 @@ require! {
   './html-tags'
 }
 
+REACT_ELEMENT_PROPERTIES = <[ type key ref _owner _context ]>
+
+has-own-property = (obj) ->
+  (check, prop) -> check and obj.has-own-property prop
+
+has-all-properties = (props, obj) -->
+  props.reduce has-own-property obj, false
+
+is-react-element = (obj) ->
+  !!obj and
+    obj |> has-all-properties REACT_ELEMENT_PROPERTIES
+
 slice = (args, index) -> [].slice.call args, index or 0
 
 builder = (tag) -->
   args = slice arguments, 1
-  args[0] = {} if typeof args[0] is 'undefined'
+  args[1] = args[0] if typeof args[0] is 'string' or
+                       is-react-element args[0]
+                       
+  args[0] = {} if typeof args[0] is 'undefined' or
+                  typeof args[0] is 'string' or
+                  is-react-element args[0]
+
   react.createElement.apply this, [tag] ++ args
 
 reducer = (reduced, tag) ->
-  reduced[tag] = -->
-    args = slice arguments
-    builder.apply this, [tag] ++ args
+  reduced[tag] = ->
+    builder.apply this, [tag] ++ slice arguments
   reduced
 
 elementary = html-tags .reduce reducer, builder

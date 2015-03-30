@@ -5,4 +5,4 @@ require! {
   'todomvc-app-css/index.css'
 }
 
-react.render $(todo-app), document.query-selector '.todoapp'
+react.render $(todo-app), document.query-selector '#app'

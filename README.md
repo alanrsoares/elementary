@@ -37,11 +37,10 @@ or `http://localhost:8080/webpack-dev-server/` (with live reload).
 
 ```LiveScript
 require! {
-  react: {Component}
   '../util/elementary': $
 }
 
-module.exports = class Hello extends Component
+module.exports = $.component
   render: ->
     $.h1 {} "Hello, #{@props.name}!"
 ```

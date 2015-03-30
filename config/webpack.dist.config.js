@@ -1,5 +1,3 @@
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
 var merge = require('object-assign');
 var config = require('./webpack.config.js')
 

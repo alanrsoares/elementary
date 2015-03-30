@@ -18,21 +18,26 @@ is-react-element = (obj) ->
 slice = (args, index) -> [].slice.call args, index or 0
 
 builder = (tag) -->
-  args = slice arguments, 1
-  args[1] = args[0] if typeof args[0] is 'string' or
-                       is-react-element args[0]
-                       
-  args[0] = {} if typeof args[0] is 'undefined' or
-                  typeof args[0] is 'string' or
-                  is-react-element args[0]
+  args = slice(arguments, 1)
 
-  react.createElement.apply this, [tag] ++ args
+  args.1 = args.0 if typeof args.0 is 'string' or
+                     is-react-element args.0
+
+  args.0 = {} if typeof args.0 is \undefined or
+                 typeof args.0 is \string or
+                 is-react-element args.0
+
+  react.create-element.apply(this, [tag] ++ args)
 
 reducer = (reduced, tag) ->
   reduced[tag] = ->
-    builder.apply this, [tag] ++ slice arguments
+    builder.apply(this, [tag] ++ slice arguments)
+
   reduced
 
-elementary = html-tags .reduce reducer, builder
+$ = html-tags .reduce(reducer, builder)
 
-module.exports = elementary
+$.component = (component-body) ->
+  react.create-class component-body
+
+module.exports = elementary = $

@@ -36,7 +36,7 @@ module.exports = react.createClass do
 
     $.footer class-name: 'footer',
       $.span class-name: 'todo-count',
-        $.strong {} items-left-phrase
+        $.strong items-left-phrase
       clear-completed-button
 
   _on-clear-completed-click: ->

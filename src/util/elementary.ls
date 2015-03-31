@@ -20,7 +20,7 @@ slice = (args, index) -> [].slice.call args, index or 0
 builder = (tag) -->
   args = slice(arguments, 1)
 
-  args.1 = args.0 if typeof args.0 is 'string' or
+  args.1 = args.0 if typeof args.0 is \string or
                      is-react-element args.0
 
   args.0 = {} if typeof args.0 is \undefined or

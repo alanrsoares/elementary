@@ -44,7 +44,7 @@ module.exports = $.component do
     @set-state is-editing: true
 
   on-save: (text) ->
-    todo-actions.update-text { id: @props.todo.id, text }
+    todo-actions.update-text id: @props.todo.id, text
     @set-state is-editing: false
 
   on-destroy-click: ->

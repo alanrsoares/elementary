@@ -1,6 +1,6 @@
 require! {
   react
-  '../util/elementary' : $
+  '../../lib/elementary' : $
 }
 
 ENTER_KEY_CODE = 13

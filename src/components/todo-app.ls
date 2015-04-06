@@ -1,6 +1,6 @@
 require! {
   react
-  '../util/elementary': $
+  '../../lib/elementary': $
   './footer'
   './header'
   './main-section'

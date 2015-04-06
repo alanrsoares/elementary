@@ -1,6 +1,6 @@
 require! {
   react
-  '../util/elementary':$
+  '../../lib/elementary':$
   './todo-item'
   '../actions/todo-actions'
 }

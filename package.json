@@ -3,7 +3,7 @@
   "repository": "git@github.com:alanrsoares/react-livescript-starter.git",
   "version": "0.5.0-beta",
   "description": "Starter kit for ReactJs (0.13.x) development using LiveScript",
-  "main": "index.js",
+  "main": "lib/elementary.ls",
   "scripts": {
     "start": "./scripts/start",
     "dist": "./scripts/dist",

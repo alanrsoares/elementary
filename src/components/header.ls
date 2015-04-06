@@ -1,6 +1,6 @@
 require! {
   react: {Component, PropTypes:types}
-  '../util/elementary' : $
+  '../../lib/elementary' : $
   '../actions/todo-actions'
   './todo-text-input'
 }

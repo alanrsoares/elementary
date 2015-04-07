@@ -38,6 +38,9 @@ reducer = (reduced, tag) ->
 $ = html-tags .reduce(reducer, builder)
 
 $.component = (component-body) ->
-  react.create-class component-body
+  component = react.create-class component-body
+  component.render-to = (target) !->
+    react.render $(component), target
+
 
 module.exports = elementary = $

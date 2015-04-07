@@ -1,7 +1,7 @@
 require! {
   react
   './components/todo-app'
-  './util/elementary' : $
+  '../lib/elementary' : $
   'todomvc-app-css/index.css'
 }
 

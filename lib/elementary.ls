@@ -29,15 +29,13 @@ builder = (tag) -->
 
   react.create-element.apply(this, [tag] ++ args)
 
-reducer = (reduced, tag) ->
+composer = (reduced, tag) ->
   reduced[tag] = ->
     builder.apply(this, [tag] ++ slice arguments)
-
   reduced
 
-$ = html-tags .reduce(reducer, builder)
+elementary = html-tags.reduce(composer, builder)
 
-$.component = (component-body) ->
-  react.create-class component-body
+elementary.component = react.create-class
 
-module.exports = elementary = $
+module.exports = elementary

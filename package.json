@@ -1,5 +1,5 @@
 {
-  "name": "elementary-ls",
+  "name": "elementary",
   "repository": "git@github.com:alanrsoares/elementary.git",
   "version": "0.5.1",
   "description": "Starter kit for ReactJs (0.13.x) development using LiveScript",

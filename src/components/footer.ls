@@ -12,6 +12,12 @@ module.exports = $.component do
   prop-types:
     all-todos: types.object.is-required
 
+  render-clear-completed-button: (completed) ->
+    if completed then button do
+      class-name: 'clear-completed'
+      on-click: @_on-clear-completed-click,
+        'Clear completed'
+
   render: ->
     all-todos = @props.all-todos
     total = Object.keys(all-todos).length
@@ -24,19 +30,13 @@ module.exports = $.component do
                   .length
 
     items-left = total - completed
-    items-left-plural = if items-left > 1 then 'items' else 'item'
-    items-left-phrase = "#items-left #items-left-plural left"
-
-    clear-completed-button =
-      button({
-        class-name: 'clear-completed'
-        on-click: @_on-clear-completed-click
-      }, 'Clear completed') if completed
+    items-left-plural = "item#{if items-left > 1 then 's' else ''}"
+    items-left-phrase = "#{if items-left then items-left else 'no'} #items-left-plural left"
 
     footer class-name: 'footer',
       span class-name: 'todo-count',
         strong items-left-phrase
-      clear-completed-button
+      @render-clear-completed-button
 
   _on-clear-completed-click: ->
     todo-actions.destroy-completed!

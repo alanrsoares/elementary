@@ -24,5 +24,5 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.ls']
   },
-  modulesDirectories: ['node_modules', 'src']
+  modulesDirectories: ['node_modules', '../../src']
 };

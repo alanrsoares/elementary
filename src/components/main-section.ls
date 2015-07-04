@@ -27,7 +27,7 @@ module.exports = $.component do
       $.input do
         class-name: 'toggle-all'
         type: 'checkbox'
-        on-change: @_on-toggle-complete-all
+        on-change: @handle-toggle-complete-all
         checked: 'checked' if @props.are-all-complete
 
       $.label html-for: 'toggle-all',
@@ -35,5 +35,5 @@ module.exports = $.component do
       $.ul class-name: 'todo-list',
         todos
 
-  _on-toggle-complete-all: ->
+  handle-toggle-complete-all: ->
     todo-actions.toggle-complete-all!

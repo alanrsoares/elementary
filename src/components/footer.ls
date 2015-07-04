@@ -15,7 +15,7 @@ module.exports = $.component do
   render-clear-completed-button: (completed) ->
     if completed then button do
       class-name: 'clear-completed'
-      on-click: @_on-clear-completed-click,
+      on-click: @handle-clear-completed-click,
         'Clear completed'
 
   render: ->
@@ -38,5 +38,5 @@ module.exports = $.component do
         strong items-left-phrase
       @render-clear-completed-button completed
 
-  _on-clear-completed-click: ->
+  handle-clear-completed-click: ->
     todo-actions.destroy-completed!

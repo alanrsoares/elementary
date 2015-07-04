@@ -2,7 +2,7 @@ require! {
   react
   'elementary':$
   './todo-item'
-  '../actions/todo-actions'
+  'actions/todos': todo-actions
 }
 
 types = react.PropTypes

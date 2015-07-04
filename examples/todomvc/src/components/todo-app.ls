@@ -1,23 +1,23 @@
 require! {
   react
-  'elementary': $
+  elementary: $
   './footer'
   './header'
   './main-section'
-  '../stores/todo-store'
+  'stores/todos': todos-store
   'alt/mixins/FluxyMixin'
 }
 
 get-todo-state = ->
-  all-todos: todo-store.get-state!.todos
-  are-all-complete: todo-store.are-all-complete!
+  all-todos: todos-store.get-state!.todos
+  are-all-complete: todos-store.are-all-complete!
 
 module.exports = $.component do
   mixins: [FluxyMixin]
 
   statics:
     store-listeners:
-      on-change: todo-store
+      on-change: todos-store
 
   get-initial-state: ->
     get-todo-state!

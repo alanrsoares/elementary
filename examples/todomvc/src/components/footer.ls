@@ -1,7 +1,7 @@
 require! {
   react
-  'elementary': $
-  '../actions/todo-actions'
+  elementary: $
+  'actions/todos': todos-actions
 }
 
 types = react.PropTypes
@@ -39,4 +39,4 @@ module.exports = $.component do
       @render-clear-completed-button completed
 
   handle-clear-completed-click: ->
-    todo-actions.destroy-completed!
+    todos-actions.destroy-completed!

@@ -35,7 +35,7 @@ or `http://localhost:8080/webpack-dev-server/` (with live reload).
 
 ```LiveScript
 require! {
-  'elementary': $
+  elementary: $
 }
 
 module.exports = $.component

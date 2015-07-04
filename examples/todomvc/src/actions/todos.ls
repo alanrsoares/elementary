@@ -10,6 +10,6 @@ actions = <[
   ]>
 
 module.exports =
-  alt.create-actions class todo-actions
+  alt.create-actions class todos-actions
     ->
       @generate-actions.apply @, actions

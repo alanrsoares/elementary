@@ -1,6 +1,6 @@
 require! {
   'elementary' : $
-  '../actions/todo-actions'
+  'actions/todos': todo-actions
   './todo-text-input'
 }
 

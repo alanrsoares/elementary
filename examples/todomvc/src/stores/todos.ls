@@ -1,15 +1,17 @@
 require! {
   '../alt'
   'object-assign': merge
-  '../actions/todo-actions'
+  'actions/todos': todos-actions
 }
+
+console.log todos-actions
 
 { keys } = Object
 
 DISPLAY_NAME = \TodoStore
 class todo-store
   ->
-    @bindActions todo-actions
+    @bindActions todos-actions
     @todos =
       'id1':
         id: 'id1'

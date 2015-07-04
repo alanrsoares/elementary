@@ -1,0 +1,4 @@
+#!/bin/bash
+rm -rf dist
+./node_modules/.bin/webpack --config config/webpack.dist.config.js --progress -p
+cp src/index.html dist/index.html

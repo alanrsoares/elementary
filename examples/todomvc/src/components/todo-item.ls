@@ -1,7 +1,7 @@
 require! {
   react
   'react/lib/cx'
-  '../../lib/elementary' : $
+  'elementary' : $
   '../actions/todo-actions'
   './todo-text-input'
 }

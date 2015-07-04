@@ -22,7 +22,7 @@ module.exports = {
     })
   ],
   resolve: {
+    modulesDirectories: ['node_modules', 'src'],
     extensions: ['', '.js', '.ls']
-  },
-  modulesDirectories: ['node_modules', '../../src']
+  }
 };

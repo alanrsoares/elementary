@@ -1,5 +1,5 @@
 require! {
-  '../../lib/elementary' : $
+  'elementary' : $
   '../actions/todo-actions'
   './todo-text-input'
 }

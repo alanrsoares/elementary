@@ -4,6 +4,8 @@ require! {
   '../actions/todo-actions'
 }
 
+{ keys } = Object
+
 DISPLAY_NAME = \TodoStore
 class todo-store
   ->
@@ -28,7 +30,7 @@ class todo-store
 
   update-all: (updates) ->
     self = @
-    Object.keys self.todos
+    keys self.todos
       |> ( .map (id) -> self.update(id, updates) )
 
   on-create: (text) ->
@@ -61,14 +63,14 @@ class todo-store
 
   on-destroy-completed: ->
     self = @
-    Object.keys self.todos
+    keys self.todos
       .filter (id) -> self.todos[id].complete
       .map (id) -> self.on-destroy id
 
   @are-all-complete = (state) ->
     { todos } = state or @get-state!
 
-    Object.keys todos
+    keys todos
       .map (key) -> todos[key]
       .filter (todo) -> not todo.complete
       .length is 0

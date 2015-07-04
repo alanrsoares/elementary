@@ -10,7 +10,6 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.scss$/, loader: 'style!css!sass' },
       { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
       { test: /\.svg$/, loader: 'url-loader' },
       { test: /\.png$/, loader: 'url-loader' },
@@ -24,5 +23,6 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js', '.ls']
-  }
+  },
+  modulesDirectories: ['node_modules', 'src']
 };

@@ -19,9 +19,9 @@ module.exports = $.component do
     return null if not keys.length
 
     todos = keys.map (key) ->
-              $(todo-item, do
+              $ todo-item, do
                 key: key
-                todo: all-todos[key])
+                todo: all-todos[key]
 
     $.section class-name: 'main',
       $.input do

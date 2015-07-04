@@ -1,6 +1,5 @@
 require! {
-  react
-  './html-tags'
+  react: { DOM, create-element, create-class }
 }
 
 REACT_ELEMENT_PROPERTIES = <[ type key ref _owner _context ]>
@@ -18,24 +17,22 @@ is-react-element = (obj) ->
 slice = (args, index) -> [].slice.call args, index or 0
 
 builder = (tag) -->
-  args = slice(arguments, 1)
-
+  args = slice arguments, 1
   args.1 = args.0 if typeof args.0 is \string or
                      is-react-element args.0
-
   args.0 = {} if typeof args.0 is \undefined or
                  typeof args.0 is \string or
                  is-react-element args.0
 
-  react.create-element.apply(this, [tag] ++ args)
+  create-element.apply(this, [tag] ++ args)
 
 composer = (reduced, tag) ->
   reduced[tag] = ->
     builder.apply(this, [tag] ++ slice arguments)
   reduced
 
-elementary = html-tags.reduce(composer, builder)
+elementary = Object.keys(DOM).reduce(composer, builder)
 
-elementary.component = react.create-class
+elementary.component = create-class
 
 module.exports = elementary

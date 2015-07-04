@@ -36,7 +36,7 @@ module.exports = $.component do
     footer class-name: 'footer',
       span class-name: 'todo-count',
         strong items-left-phrase
-      @render-clear-completed-button
+      @render-clear-completed-button completed
 
   _on-clear-completed-click: ->
     todo-actions.destroy-completed!

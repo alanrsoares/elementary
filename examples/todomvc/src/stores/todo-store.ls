@@ -4,6 +4,7 @@ require! {
   '../actions/todo-actions'
 }
 
+DISPLAY_NAME = \TodoStore
 class todo-store
   ->
     @bindActions todo-actions
@@ -72,4 +73,4 @@ class todo-store
       .filter (todo) -> not todo.complete
       .length is 0
 
-module.exports = alt.create-store todo-store
+module.exports = alt.create-store todo-store, DISPLAY_NAME

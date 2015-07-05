@@ -1,17 +1,12 @@
 require! {
-  '../alt'
+  'alt-instance': alt
   'object-assign': merge
-  'actions/todos': todos-actions
+  '../actions/todo-actions'
 }
 
-console.log todos-actions
-
-{ keys } = Object
-
-DISPLAY_NAME = \TodoStore
 class todo-store
   ->
-    @bindActions todos-actions
+    @bindActions todo-actions
     @todos =
       'id1':
         id: 'id1'
@@ -32,7 +27,7 @@ class todo-store
 
   update-all: (updates) ->
     self = @
-    keys self.todos
+    Object.keys self.todos
       |> ( .map (id) -> self.update(id, updates) )
 
   on-create: (text) ->
@@ -65,16 +60,16 @@ class todo-store
 
   on-destroy-completed: ->
     self = @
-    keys self.todos
+    Object.keys self.todos
       .filter (id) -> self.todos[id].complete
       .map (id) -> self.on-destroy id
 
   @are-all-complete = (state) ->
     { todos } = state or @get-state!
 
-    keys todos
+    Object.keys todos
       .map (key) -> todos[key]
       .filter (todo) -> not todo.complete
       .length is 0
 
-module.exports = alt.create-store todo-store, DISPLAY_NAME
+module.exports = alt.create-store todo-store

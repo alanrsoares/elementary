@@ -1,8 +1,8 @@
 require! {
   react
   './components/todo-app'
-  'elementary' : $
+  './util/elementary' : $
   'todomvc-app-css/index.css'
 }
 
-react.render $(todo-app), document.query-selector '#app'
+react.render $(todo-app), document.query-selector '.todoapp'

@@ -1,12 +1,11 @@
 require! {
   react
-  'elementary' : $
+  elementary: $
 }
 
 ENTER_KEY_CODE = 13
 
-module.exports = $.component do
-
+module.exports = react.create-class do
   get-initial-state: ->
     value: @props.value or ''
 

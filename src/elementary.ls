@@ -2,6 +2,8 @@ require! {
   react: { DOM, create-element, create-class }
 }
 
+{ keys } = Object
+
 REACT_ELEMENT_PROPERTIES = <[ type key ref _owner _context ]>
 
 has-own-property = (obj) ->
@@ -31,7 +33,8 @@ composer = (reduced, tag) ->
     builder.apply(this, [tag] ++ slice arguments)
   reduced
 
-elementary = Object.keys(DOM).reduce(composer, builder)
+elementary = keys DOM
+                .reduce composer, builder
 
 elementary.component = create-class
 

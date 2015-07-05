@@ -50,7 +50,7 @@ Install babel-loader
 $ npm i babel-loader --save-dev
 ```
 
-Add babel-loader to the 'ls' loader pipeline in [/examples/todomvc/config/webpack.config.js](./examples/todomvc/config/webpack.config.js#L16)
+Add babel-loader to the 'ls' loader pipeline in [webpack.config.js](./examples/todomvc/config/webpack.config.js#L16)
 ```javascript
 { test: /\.ls$/, loader: 'babel-loader!livescript-loader' }
 ```
@@ -60,7 +60,7 @@ require! react: {Component}
 
 module.exports = class Hello extends Component
   render: ->
-    ``<h1>Hello, {this.props.name}!</h1>``
+    ``<h1>Hello, { this.props.name }!</h1>``
 ```
 
 ## TODO:

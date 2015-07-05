@@ -8,6 +8,8 @@ require! {
   'alt/mixins/FluxyMixin'
 }
 
+{ div } = $
+
 get-todo-state = ->
   all-todos: todo-store.get-state!.todos
   are-all-complete: todo-store.are-all-complete!
@@ -17,18 +19,17 @@ module.exports = react.create-class do
 
   statics:
     store-listeners:
-      on-change: todo-store
+      on-store-change: todo-store
 
   get-initial-state: ->
     get-todo-state!
 
   render: ->
-    $.div {},
-      $(header, title: 'Eλementary')
-      $(main-section,
-        all-todos: @state.all-todos
-        are-all-complete: @state.are-all-complete)
-      $(footer, all-todos: @state.all-todos)
+    { all-todos, are-all-complete } = @state
+    div {},
+      $ header, title: 'Eλementary'
+      $ main-section, { all-todos, are-all-complete }
+      $ footer, { all-todos }
 
-  on-change: ->
+  on-store-change: ->
     @set-state get-todo-state

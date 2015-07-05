@@ -2,6 +2,7 @@ require! {
   react
   elementary: $
 }
+{ input } = $
 
 ENTER_KEY_CODE = 13
 
@@ -10,13 +11,13 @@ module.exports = react.create-class do
     value: @props.value or ''
 
   render: ->
-    $.input do
+    input do
       class-name: @props.class-name
       id: @props.id
       placeholder: @props.placeholder
-      on-blur: @on-blur
-      on-change: @on-change
-      on-key-down: @on-key-down
+      on-blur: @handle-blur
+      on-change: @handle-change
+      on-key-down: @handle-key-down
       value: @state.value
       auto-focus: true
 
@@ -31,11 +32,18 @@ module.exports = react.create-class do
   /**
    * @param {object} event
    */
-  on-change: (event) ->
+  handle-blur: (event) ->
+    @handle-change event
+    @save!
+
+  /**
+   * @param {object} event
+   */
+  handle-change: (event) ->
     @set-state value: event.target.value
 
   /**
    * @param  {object} event
    */
-  on-key-down: (event) ->
+  handle-key-down: (event) ->
     @save! if event.keyCode is ENTER_KEY_CODE

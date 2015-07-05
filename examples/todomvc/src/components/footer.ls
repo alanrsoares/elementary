@@ -22,7 +22,7 @@ module.exports = react.createClass do
 
     completed = keys all-todos
                   .map (key) -> all-todos[key]
-                  .filter (todo) -> todo.complete
+                  .filter (.complete)
                   .length
 
     items-left = total - completed

@@ -1,11 +1,13 @@
 require! {
   react
-  elementary:$
+  elementary: $
   './todo-item'
   '../actions/todo-actions'
 }
 
 types = react.PropTypes
+
+{ section, input, label, ul } = $
 
 module.exports = react.create-class do
   prop-types:
@@ -19,20 +21,19 @@ module.exports = react.create-class do
     return null if not keys.length
 
     todos = keys.map (key) ->
-              $(todo-item, do
-                key: key
-                todo: all-todos[key])
+              todo = all-todos[key]
+              $ todo-item, { key, todo }
 
-    $.section class-name: 'main',
-      $.input do
+    section class-name: 'main',
+      input do
         class-name: 'toggle-all'
         type: 'checkbox'
-        on-change: @_on-toggle-complete-all
+        on-change: @handle-input-change
         checked: 'checked' if @props.are-all-complete
-      $.label html-for: 'toggle-all',
+      label html-for: 'toggle-all',
         'Mark all as complete'
-      $.ul class-name: 'todo-list',
+      ul class-name: 'todo-list',
         todos
 
-  _on-toggle-complete-all: ->
+  handle-input-change: ->
     todo-actions.toggle-complete-all!

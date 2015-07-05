@@ -26,8 +26,8 @@ $ npm install
 
 ## Running the Application
 
-You can run `npm start` to fire up the application on `http://localhost:8080`
-or `http://localhost:8080/webpack-dev-server/` (with live reload).
+You can run `npm start` to fire up the application on `[http://localhost:8080](http://localhost:8080)`
+or `[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/)` (with live reload).
 
 ## Example React component
 
@@ -38,9 +38,11 @@ require! {
   elementary: $
 }
 
+{ h1 } = $
+
 module.exports = $.component
   render: ->
-    $.h1 {} "Hello, #{@props.name}!"
+    h1 "Hello, #{@props.name}!"
 ```
 
 > With JSX
@@ -56,7 +58,7 @@ Add babel-loader to the 'ls' loader pipeline in [config/webpack.config.js](../ma
 ```
 
 ```LiveScript
-require! react: {Component}
+require! react: { Component }
 
 module.exports = class Hello extends Component
   render: ->

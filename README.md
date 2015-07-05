@@ -26,8 +26,8 @@ $ npm install
 
 ## Running the Application
 
-You can run `npm start` to fire up the application on `[http://localhost:8080](http://localhost:8080)`
-or `[http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/)` (with live reload).
+You can run `npm start` to fire up the application on [http://localhost:8080](http://localhost:8080)
+or [http://localhost:8080/webpack-dev-server/](http://localhost:8080/webpack-dev-server/) (with live reload).
 
 ## Example React component
 

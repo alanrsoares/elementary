@@ -1,5 +1,5 @@
 require! {
-  '../alt'
+  'alt-instance': alt
   'object-assign': merge
   '../actions/todo-actions'
 }

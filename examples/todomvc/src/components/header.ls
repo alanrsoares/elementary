@@ -14,7 +14,7 @@ module.exports = class Header extends Component
       $ todo-text-input, do
         class-name: 'new-todo'
         placeholder: 'What needs to be done?'
-        on-save: @_on-save
+        on-save: @handle-save
 
-  _on-save: (text) ->
+  handle-save: (text) ->
     todo-actions.create text

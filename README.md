@@ -50,7 +50,7 @@ Install babel-loader
 $ npm i babel-loader --save-dev
 ```
 
-Add babel-loader to the 'ls' loader pipeline in [config/webpack.config.js](../master/config/webpack.config.js#L17)
+Add babel-loader to the 'ls' loader pipeline in [/examples/todomvc/config/webpack.config.js](./examples/todomvc/config/webpack.config.js#L17)
 ```javascript
 { test: /\.ls$/, loader: 'babel-loader!livescript-loader' }
 ```

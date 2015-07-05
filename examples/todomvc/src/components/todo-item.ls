@@ -22,7 +22,7 @@ module.exports = react.create-class do
     li-classes = cx do
                   completed: todo.complete
                   editing: @state.is-editing
-    $.li do
+    li do
       key: todo.id
       class-name: li-classes,
       div class-name: 'view',
@@ -37,29 +37,29 @@ module.exports = react.create-class do
       class-name: 'toggle'
       type: 'checkbox'
       checked: todo.complete
-      on-change: @on-toggle-complete
+      on-change: @handle-checkbox-toggle
 
   render-destroy-button: ->
     button do
       class-name: 'destroy'
-      on-click: @on-destroy-click
+      on-click: @handle-destroy-click
 
   render-text-input: (todo) ->
     return if not @state.is-editing
     $ todo-text-input,
-        class-name: 'edit'
-        on-save: @on-save
-        value: todo.text
+      class-name: 'edit'
+      on-save: @handle-save
+      value: todo.text
 
-  on-toggle-complete: ->
+  handle-checkbox-toggle: ->
     todo-actions.toggle-complete @props.todo.id
 
   handle-double-click: ->
     @set-state is-editing: true
 
-  on-save: (text) ->
+  handle-save: (text) ->
     todo-actions.update-text { id: @props.todo.id, text }
     @set-state is-editing: false
 
-  on-destroy-click: ->
+  handle-destroy-click: ->
     todo-actions.destroy @props.todo.id

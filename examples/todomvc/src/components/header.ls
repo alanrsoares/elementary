@@ -10,7 +10,7 @@ require! {
 module.exports = class Header extends Component
   render: ->
     header class-name:'header',
-      h1 {} @props.title
+      h1 @props.title
       $ todo-text-input, do
         class-name: 'new-todo'
         placeholder: 'What needs to be done?'

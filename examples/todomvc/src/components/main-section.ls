@@ -1,6 +1,6 @@
 require! {
   react
-  elementary:$
+  elementary: $
   './todo-item'
   '../actions/todo-actions'
 }

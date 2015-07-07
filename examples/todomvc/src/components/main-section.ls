@@ -20,10 +20,6 @@ module.exports = react.create-class do
 
     return null if not keys.length
 
-    todos = keys.map (key) ->
-              todo = all-todos[key]
-              $ todo-item, { key, todo }
-
     section class-name: 'main',
       input do
         class-name: 'toggle-all'
@@ -33,7 +29,9 @@ module.exports = react.create-class do
       label html-for: 'toggle-all',
         'Mark all as complete'
       ul class-name: 'todo-list',
-        todos
+        keys.map (key) ->
+          todo = all-todos[key]
+          $ todo-item, { key, todo }
 
   handle-input-change: ->
     todo-actions.toggle-complete-all!

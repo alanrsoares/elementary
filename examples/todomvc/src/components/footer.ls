@@ -29,9 +29,9 @@ module.exports = react.createClass do
     items-left-plural = if items-left > 1 then 'items' else 'item'
     items-left-phrase = "#items-left #items-left-plural left"
 
-    $.footer class-name: 'footer',
-      $.span class-name: 'todo-count',
-        $.strong items-left-phrase
+    footer class-name: 'footer',
+      span class-name: 'todo-count',
+        strong items-left-phrase
       @render-clear-completed-button completed
 
   render-clear-completed-button: (completed) ->
@@ -39,7 +39,7 @@ module.exports = react.createClass do
       button do
         class-name: 'clear-completed'
         on-click: @handle-clear-completed-click,
-          'Clear completed'
+        'Clear completed'
 
   handle-clear-completed-click: ->
     todo-actions.destroy-completed!

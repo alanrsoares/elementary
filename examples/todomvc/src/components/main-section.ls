@@ -1,15 +1,13 @@
 require! {
-  react
+  react: { PropTypes: types }
   elementary: $
   './todo-item'
   '../actions/todo-actions'
 }
 
-types = react.PropTypes
-
 { section, input, label, ul } = $
 
-module.exports = react.create-class do
+module.exports = $.component do
   prop-types:
     all-todos: types.object.is-required
     are-all-complete: types.bool.is-required

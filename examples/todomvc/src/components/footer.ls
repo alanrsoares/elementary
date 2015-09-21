@@ -1,5 +1,5 @@
 require! {
-  react
+  react: { PropTypes: types }
   elementary: $
   '../actions/todo-actions'
 }
@@ -7,9 +7,7 @@ require! {
 { button, span, footer, strong } = $
 { keys } = Object
 
-types = react.PropTypes
-
-module.exports = react.createClass do
+module.exports = $.component do
   prop-types:
     all-todos: types.object.is-required
 

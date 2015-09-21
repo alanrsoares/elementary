@@ -1,5 +1,4 @@
 require! {
-  react
   elementary: $
   './footer'
   './header'
@@ -14,7 +13,7 @@ get-todo-state = ->
   all-todos: todo-store.get-state!.todos
   are-all-complete: todo-store.are-all-complete!
 
-module.exports = react.create-class do
+module.exports = $.component do
   mixins: [FluxyMixin]
 
   statics:

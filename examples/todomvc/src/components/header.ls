@@ -1,5 +1,5 @@
 require! {
-  react: { Component, PropTypes: types }
+  react: { PropTypes: types }
   elementary: $
   '../actions/todo-actions'
   './todo-text-input'
@@ -7,7 +7,7 @@ require! {
 
 { header, h1 } = $
 
-module.exports = class Header extends Component
+module.exports = $.component do
   render: ->
     header class-name:'header',
       h1 @props.title

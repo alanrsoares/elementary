@@ -10,7 +10,7 @@ require! {
 
 types = react.PropTypes
 
-module.exports = react.create-class do
+module.exports = $.component do
   prop-types:
     todo: types.object.is-required
 

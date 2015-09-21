@@ -6,7 +6,7 @@ require! {
 
 ENTER_KEY_CODE = 13
 
-module.exports = react.create-class do
+module.exports = $.component do
   get-initial-state: ->
     value: @props.value or ''
 
